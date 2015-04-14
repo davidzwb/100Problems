@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void fun(char *tt, int pp[])
+{
+	while(*tt)
+	{
+		pp[*tt - 97]++;
+		tt++;
+	}
+}
+
+int main(void)
+{
+	int pp[26] = {0}, n = 0;
+	char tt[256] = {'\0'};
+	printf("insert a string:\n");
+	scanf("%s", tt);
+	fun(tt, pp);
+	for(n; n < sizeof(pp) / sizeof(int); n++)
+		printf("%c:%d\n", n + 97, pp[n]);
+	return 0;
+}

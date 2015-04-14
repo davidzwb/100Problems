@@ -1,0 +1,36 @@
+#include <stdio.h>
+//请编写一个函数void fun(int m,int k,int xx[]),该函数的功能是：将大于整数m且紧靠m的k各素数存入xx所指的数组中。
+
+void fun(int m, int k, int xx[])
+{
+	int n = m, i = 0;
+	while(k--)
+	{
+		while(!isPrime(++n));
+		xx[i++] = n;			
+	}
+}
+
+int isPrime(int num)
+{
+	int i = 2;
+	for(i; i < num; i++)
+	{
+		if(num % i == 0)
+			return 0;
+	}
+	return 1;
+}
+
+int main(void)
+{
+	int m = 0, n = 0, i = 0;
+	int xx[256] = {0};
+	printf("input a number:\n");
+	scanf("%d",&m);
+	printf("input quantity:\n");
+	scanf("%d",&n);
+	fun(m, n, xx);
+	while(n--)
+		printf("%d\n",xx[i++]);
+}
