@@ -18,4 +18,5 @@ int fun(Node *h)
 			max = p->score;
 		p = p->next;
 	}
+	return max;
 }
