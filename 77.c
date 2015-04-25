@@ -4,7 +4,7 @@
 
 int fun(int a, int b)
 {
-return a / 10 * + a % 10 * 100 + b / 10 * 10 + b % 1000;
+return a / 10 + a % 10 * 100 + b / 10 * 10 + b % 1000;
 }
 
 int main(int argc, char const *argv[])

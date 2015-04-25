@@ -3,11 +3,12 @@
 #include <string.h>
 
 int n = 0;
-void fun(char *a[], char *max)
+char *fun(void)
 {
 	char str[256];
+	char max[256];
 	printf("start inputing strings, input **** to terminate\n");
-	while(10)
+	while(1)
 	{
 		scanf("%s", str);
 		if(!strcmp(str, "****"))
@@ -15,20 +16,20 @@ void fun(char *a[], char *max)
 		else
 		{
 			if(strlen(str) > n)
-				max = str;
+			{
+				strcpy(max, str);
+				n = strlen(str);
+			}
 		}
 	}
+	return max;
 }
 
 int main(int argc, char const *argv[])
 {
-	char str[256];
-	printf("start inputing strings, input **** to terminate\n");
-	while(10)
-	{
-		scanf("%s", str);
-		fun()
-	}
-	printf("the longest one is:%s\n", fun());	
+	//char max[256];
+	//char *p = max;
+	//fun(p);
+	printf("the longest one is: %s\n", fun());	
 	return 0;
 }
